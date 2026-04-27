@@ -6,9 +6,20 @@
 
     <!-- bean definitions here -->
     <bean id="developer" class="org.mahanth.Developer">
+        <!-- Setter Injection -->
+<!--        <property name="age" value="21"></property>-->
+
+        <!-- Constructor Injection -->
+<!--        <constructor-arg index="0" value="21"></constructor-arg>-->
+
+        <!-- Assigning the reference of laptop object which already existed to the laptop instance variable for constructor -->
+        <constructor-arg index="0" ref="laptop1"></constructor-arg>
+
+        <!-- Assigning the reference of laptop object which already existed to the laptop instance variable using setter-->
+        <property name="laptop" ref="laptop1"></property>
 
     </bean>
-    <bean id="Laptop" class="org.mahanth.Laptop">
+    <bean id="laptop1" class="org.mahanth.Laptop">
 
     </bean>
 </beans>
