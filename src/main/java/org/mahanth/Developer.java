@@ -3,7 +3,8 @@ package org.mahanth;
 public class Developer {
 
 //    private int age ;
-    private Laptop laptop;
+//    private Laptop laptop;
+    private Computer computer;
 
     public Developer() { // For verification purpose in order to know object created for this bean bia spring
         System.out.println("Developer Constructor");
@@ -13,13 +14,14 @@ public class Developer {
 //        this.age = age;
 //    }
 
-        public Developer(Laptop laptop) {
-        this.laptop = laptop;
-    }
+//        public Developer(Laptop laptop) {
+//        this.laptop = laptop;
+//    }
 
     public void build(){
         System.out.println("Building project will be starting soon");
-        laptop.compile();
+//        laptop.compile();
+        computer.compile();
     }
 
 //    public int getAge() {
@@ -29,11 +31,18 @@ public class Developer {
 //        this.age = age;
 //    }
 
-    public Laptop getLaptop() {
-        return laptop;
-    }
+//    public Laptop getLaptop() {
+//        return laptop;
+//    }
+//
+//    public void setLaptop(Laptop laptop) {
+//        this.laptop = laptop;
+//    }
 
-    public void setLaptop(Laptop laptop) {
-        this.laptop = laptop;
+    public Computer getComputer() {
+        return computer;
+    }
+    public void setComputer(Computer computer) {
+        this.computer = computer;
     }
 }

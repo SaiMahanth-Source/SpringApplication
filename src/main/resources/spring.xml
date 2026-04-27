@@ -5,7 +5,10 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
-    <bean id="developer" class="org.mahanth.Developer">
+<!--    <bean id="developer" class="org.mahanth.Developer" autowire="byName">-->
+
+    <bean id="developer" class="org.mahanth.Developer" autowire="byType">
+
         <!-- Setter Injection -->
 <!--        <property name="age" value="21"></property>-->
 
@@ -13,13 +16,19 @@
 <!--        <constructor-arg index="0" value="21"></constructor-arg>-->
 
         <!-- Assigning the reference of laptop object which already existed to the laptop instance variable for constructor -->
-        <constructor-arg index="0" ref="laptop1"></constructor-arg>
+<!--        <constructor-arg index="0" ref="laptop1"></constructor-arg>-->
 
         <!-- Assigning the reference of laptop object which already existed to the laptop instance variable using setter-->
-        <property name="laptop" ref="laptop1"></property>
+<!--        <property name="laptop" ref="laptop1"></property>-->
+
+        <!-- As name and reference are of same name need not mention instead we can achieve using attribute autowire in bean tag-->
+<!--        <property name="computer" ref="computer"></property>-->
 
     </bean>
-    <bean id="laptop1" class="org.mahanth.Laptop">
+    <bean id="laptop" class="org.mahanth.Laptop" primary="true">
+
+    </bean>
+    <bean id="computer" class="org.mahanth.Desktop">
 
     </bean>
 </beans>
